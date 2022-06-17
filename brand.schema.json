@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/brand.schema.json",
+  "title": "Brand",
+  "$ref": "#/$defs/brand",
+  "$defs": {
+    "brand": {
+      "type": "object",
+      "title": "Brand",
+      "description": "A brand schema.",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "brandName",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for brand. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "brandName": {
+          "type": "string"
+        },
+
+        "brandNameAliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+
+        "brandBestKnownAs": {
+          "type": "string"
+        },
+
+
+        "brandDescription": {
+          "type": "string",
+          "minLength": 16
+        },
+
+        "brandImage": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI pointing at the brand image or logo."
+        },
+
+        "brandLocator": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI pointing at the corporate page of the brand."
+        },
+
+        "brandSlogan": {
+          "type": "string"
+        },
+
+        "additionalAttributes": {
+          "type": "object",
+
+          "properties": {
+
+            "esbi": {
+              "type": "number"
+            }
+          }
+        },
+
+        "relatedEntities": {
+          "type": "object",
+
+          "properties": {
+
+            "hasBrand": {
+              "type": "array",
+              "description": "Identifiers for related sub-brands.",
+
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "hasProduct": {
+              "type": "array",
+              "description": "Identifiers for related products.",
+
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "servesMarket": {
+              "type": "array",
+              "description": "Identifiers for related markets.",
+
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+
+      }
+    }
+  }
+}

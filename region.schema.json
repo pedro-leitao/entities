@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/region.schema.json",
+  "title": "Region",
+  "$ref": "#/$defs/region",
+  "$defs": {
+    "region": {
+      "type": "object",
+      "title": "Region",
+      "description": "A region schema.",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "regionName",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for region. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "regionName": {
+          "type": "string"
+        },
+
+        "regionBestKnownAs": {
+          "type": "string"
+        },
+
+        "regionDescription": {
+          "type": "string",
+          "minLength": 16
+        },
+
+        "regionIso3166Code": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "^[0-9]+$",
+          "description": "The ISO 3166 numeric code for the region."
+        },
+
+        "relatedEntities": {
+          "type": "object",
+
+          "properties": {
+
+            "hasCountry": {
+              "type": "array",
+              "description": "Identifiers for related countries.",
+
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+
+      }
+    }
+  }
+}

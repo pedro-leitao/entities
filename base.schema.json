@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json",
+  "title": "Base Attributes for an entity",
+  "type": "object",
+  "description": "A base attribute schema definition for all entities.",
+
+  "additionalProperties": true,
+
+  "properties": {
+
+    "entityVersion": {
+      "description": "A entity version attribute, which represents the schema version the entity is using.",
+      "type": "string",
+      "pattern": "^\\d+.\\d+.\\d+$"
+    },
+
+    "entityType": {
+      "description": "A entity type attribute, which defines the type of entity which is being described.",
+      "type": "string",
+      "enum": [ "company", "brand", "category", "channel", "industry", "project", "region", "country", "subregion" ]
+    },
+
+    "entityCode": {
+      "description": "The unique code attribute for a given entity.",
+      "type": "string"
+    }
+
+  }
+}

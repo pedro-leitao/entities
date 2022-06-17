@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/company.schema.json",
+  "title": "Company",
+  "$ref": "#/$defs/company",
+  "$defs": {
+    "company": {
+      "type": "object",
+      "title": "Company",
+      "description": "A company schema.",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "companyName",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for company. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "companyName": {
+          "type": "string"
+        },
+
+        "companyNameAliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+
+        "companyBestKnownAs": {
+          "type": "string"
+        },
+
+
+        "companyDescription": {
+          "type": "string",
+          "minLength": 16
+        },
+
+        "companyType": {
+          "type": "string",
+          "enum": [
+            "public",
+            "private",
+            "co-operative",
+            "state-owned",
+            "non-profit",
+            "sole-proprietorship",
+            "subsidiary company",
+            "holding company",
+            "charitable organization",
+            "limited partnership",
+            "general partnership",
+            "chartered company"
+          ]
+        },
+
+        "companyImage": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI pointing at the brand image or logo."
+        },
+
+        "companyLocator": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI pointing at the corporate page of the company."
+        },
+
+        "companySlogan": {
+          "type": "string"
+        },
+
+        "additionalAttributes": {
+          "type": "object",
+
+          "properties": {
+
+            "esci": {
+              "type": "number",
+              "description": "EMI's Company Establishment Number."
+            },
+
+            "duns": {
+              "type": "string",
+              "description": "The Dun & Bradstreet DUNS number for the company."
+            },
+
+            "gln": {
+              "type": "string",
+              "description": "GS1's Global Location Number for the company."
+            },
+
+            "stock": {
+              "type": "object",
+              "required": [ "stockTicker", "listedIn" ],
+
+              "properties": {
+
+                "stockTicker": {
+                  "type": "string"
+                },
+                "listedIn": {
+                  "type": "string"
+                }
+
+              }
+            },
+
+            "registration": {
+              "type": "object",
+              "required": [ "registrationNumber", "jurisdiction" ],
+              "properties": {
+
+                "registrationNumber": {
+                  "type": "string"
+                },
+                "jurisdiction": {
+                  "type": "string"
+                }
+              }
+            }
+
+          }
+        },
+
+        "relatedEntities": {
+          "type": "object",
+
+          "properties": {
+
+            "hasCompany": {
+              "type": "array",
+              "description": "Identifiers for related companies.",
+
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "hasCompetitor": {
+              "type": "array",
+              "description": "Identifiers for competitor companies.",
+
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "hasBrand": {
+              "type": "array",
+              "description": "Identifiers for related brands.",
+
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+
+      }
+    }
+  }
+}

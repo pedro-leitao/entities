@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json",
+  "title": "Metadata",
+  "type": "object",
+  "description": "Metadata describing a given object.",
+
+  "additionalProperties": true,
+
+  "required": [
+    "createdBy",
+    "createdAt",
+    "updatedBy",
+    "updatedAt",
+    "validFrom",
+    "invisible",
+    "obsolete",
+    "forDeletion"
+  ],
+
+  "properties": {
+
+    "createdBy": {
+      "type": "string"
+    },
+
+    "createdAt": {
+      "type": "number",
+      "description": "A POSIX timestamp with the time of creation."
+    },
+
+    "updatedBy": {
+      "type": "string"
+    },
+
+    "updatedAt": {
+      "type": "number",
+      "description": "A POSIX timestamp with the time of last update."
+    },
+
+    "validFrom": {
+      "type": "number",
+      "description": "A POSIX timestamp with the time the entity is valid from."
+    },
+
+    "validTo": {
+      "type": "number",
+      "description": "A POSIX timestamp with the time the entity is valid to."
+    },
+
+    "invisible": {
+      "type": "boolean",
+      "default": false
+    },
+
+    "obsolete": {
+      "type": "boolean",
+      "default": false
+    },
+
+    "forDeletion": {
+      "type": "boolean",
+      "default": false,
+      "description": "The record is in the recycle bin. The recycle bin will permanently delete records after 15 days."
+    },
+
+    "updateReason": {
+      "type": "object",
+
+      "properties": {
+
+        "reasonType": {
+          "type": "string",
+          "enum": [ "correction", "change" ]
+        },
+
+        "reasonDescription": {
+          "type": "string",
+          "minLength": 16
+        }
+      }
+    },
+
+    "needsReview": {
+      "type": "boolean",
+      "default": false
+    },
+
+    "reviewReason": {
+      "type": "object",
+
+      "properties": {
+
+        "reasonType": {
+          "type": "string",
+          "enum": [ "possible duplicate", "not enough information", "unclear data", "loose match" ]
+        },
+
+        "reasonDescription": {
+          "type": "string",
+          "minLength": 16
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/country.schema.json",
+  "title": "Country",
+  "$ref": "#/$defs/country",
+  "$defs": {
+    "country": {
+      "type": "object",
+      "title": "Country",
+      "description": "A country schema using ISO-3166 attributes.",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "countryName",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for country. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "countryName": {
+          "type": "string"
+        },
+
+        "countryBestKnownAs": {
+          "type": "string"
+        },
+
+        "countryAlpha2Code": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[A-Z]+$",
+          "description": "The ISO 3166 code for the country."
+        },
+
+        "countryAlpha3Code": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3,
+          "pattern": "^[A-Z]+$",
+          "description": "The ISO 3166 code for the country."
+        },
+
+        "relatedEntities": {
+          "type": "object",
+
+          "properties": {
+
+            "hasSubregion": {
+              "type": "array",
+              "description": "Identifiers for related subregions.",
+
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+      }
+    }
+  }
+}

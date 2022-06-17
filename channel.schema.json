@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/channel.schema.json",
+  "title": "Channel",
+  "$ref": "#/$defs/channel",
+  "$defs": {
+    "channel": {
+      "type": "object",
+      "title": "Channel",
+      "description": "A channel schema.",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "channelName",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for channel. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "channelName": {
+          "type": "string"
+        },
+
+        "channelDescription": {
+          "type": "string",
+          "minLength": 16
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+
+      }
+    }
+  }
+}

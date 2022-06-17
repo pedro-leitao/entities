@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/subregion.schema.json",
+  "title": "Subregion",
+  "$ref": "#/$defs/subregion",
+  "$defs": {
+    "subregion": {
+      "type": "object",
+      "title": "Subregion",
+      "description": "A region (subregion) schema",
+
+      "additionalProperties": true,
+
+      "required": [
+        "entityVersion",
+        "entityType",
+        "entityCode",
+        "subregionName",
+        "subregionType",
+        "metadata"
+      ],
+
+      "properties": {
+
+        "_id": {
+          "description": "System generated unique identifier for subregion. (A UUID specified by RFC4122).",
+          "type": "string",
+          "format": "uuid"
+        },
+
+        "_affinity": {
+          "description": "A configurable attribute which takes the name of another entity attribute, which is then used to define the sharding affinity at the data store.",
+          "type": "string"
+        },
+
+        "entityVersion": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+        },
+
+        "entityType": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+        },
+
+        "entityCode": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+        },
+
+        "subregionName": {
+          "type": "string"
+        },
+
+        "subregionBestKnownAs": {
+          "type": "string"
+        },
+
+        "subregionIso3166Code": {
+          "type": "string",
+          "description": "The ISO 3166 numeric code for the subregion. For example, BE-VLG for Vlaams Gewest in Belgium."
+        },
+
+        "subregionType": {
+          "type": "string",
+          "enum": [
+            "city",
+            "state",
+            "territory",
+            "province",
+            "federal district",
+            "county",
+            "capital region",
+            "special region"
+          ]
+        },
+
+        "metadata": {
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+        }
+
+      }
+    }
+  }
+}
