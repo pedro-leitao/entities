@@ -33,15 +33,15 @@
         },
 
         "entityVersion": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityVersion"
+          "$ref": "base.schema.json#/definitions/properties/entityVersion"
         },
 
         "entityType": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityType"
+          "$ref": "base.schema.json#/definitions/properties/entityType"
         },
 
         "entityCode": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/definitions/properties/entityCode"
+          "$ref": "base.schema.json#/definitions/properties/entityCode"
         },
 
         "channelName": {
@@ -54,7 +54,7 @@
         },
 
         "metadata": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+          "$ref": "metadata.schema.json"
         }
 
       }
