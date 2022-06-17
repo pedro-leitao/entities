@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/region.schema.json",
+  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/region.schema.json",
   "title": "Region",
   "$ref": "#/$defs/region",
   "$defs": {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/subregion.schema.json",
+  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/subregion.schema.json",
   "title": "Subregion",
   "$ref": "#/$defs/subregion",
   "$defs": {
