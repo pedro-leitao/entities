@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/company.schema.json",
+  "$id": "company.schema.json",
   "title": "Company",
-  "$ref": "#/definitions/company",
-  "definitions": {
+  "$ref": "#/$defs/company",
+  "$defs": {
     "company": {
       "type": "object",
       "title": "Company",
@@ -33,15 +33,15 @@
         },
 
         "entityVersion": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityVersion"
+          "$ref": "base.schema.json#/properties/entityVersion"
         },
 
         "entityType": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityType"
+          "$ref": "base.schema.json#/properties/entityType"
         },
 
         "entityCode": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityCode"
+          "$ref": "base.schema.json#/properties/entityCode"
         },
 
         "companyName": {
@@ -187,7 +187,7 @@
         },
 
         "metadata": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/metadata.schema.json"
+          "$ref": "metadata.schema.json"
         }
 
       }

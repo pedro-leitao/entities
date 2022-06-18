@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/metadata.schema.json",
+  "$id": "metadata.schema.json",
   "title": "Metadata",
   "type": "object",
   "description": "Metadata describing a given object.",

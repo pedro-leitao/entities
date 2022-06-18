@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/category.schema.json",
+  "$id": "category.schema.json",
   "title": "Category",
   "$ref": "#/$defs/category",
   "$defs": {
@@ -33,15 +33,15 @@
         },
 
         "entityVersion": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityVersion"
+          "$ref": "base.schema.json#/properties/entityVersion"
         },
 
         "entityType": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityType"
+          "$ref": "base.schema.json#/properties/entityType"
         },
 
         "entityCode": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityCode"
+          "$ref": "base.schema.json#/properties/entityCode"
         },
 
         "categoryName": {
@@ -54,7 +54,7 @@
         },
 
         "metadata": {
-          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/metadata.schema.json"
+          "$ref": "metadata.schema.json"
         }
 
       }

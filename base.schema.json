@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json",
+  "$id": "base.schema.json",
   "title": "Base Attributes for an entity",
   "type": "object",
   "description": "A base attribute schema definition for all entities.",
