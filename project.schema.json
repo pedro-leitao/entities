@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/project.schema.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/project.schema.json",
   "title": "Project",
   "$ref": "#/$defs/project",
   "$defs": {
@@ -33,15 +33,15 @@
         },
 
         "entityVersion": {
-          "$ref": "base.schema.json#/definitions/properties/entityVersion"
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityVersion"
         },
 
         "entityType": {
-          "$ref": "base.schema.json#/definitions/properties/entityType"
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityType"
         },
 
         "entityCode": {
-          "$ref": "base.schema.json#/definitions/properties/entityCode"
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityCode"
         },
 
         "projectName": {
@@ -54,7 +54,7 @@
         },
 
         "metadata": {
-          "$ref": "metadata.schema.json"
+          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
         }
 
       }
