@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/company.schema.json",
+  "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/company.schema.json",
   "title": "Company",
   "$ref": "#/$defs/company",
   "$defs": {
@@ -33,15 +33,15 @@
         },
 
         "entityVersion": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityVersion"
+          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityVersion"
         },
 
         "entityType": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityType"
+          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityType"
         },
 
         "entityCode": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/base.schema.json#/properties/entityCode"
+          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/base.schema.json#/properties/entityCode"
         },
 
         "companyName": {
@@ -187,7 +187,7 @@
         },
 
         "metadata": {
-          "$ref": "https://emidvsharedschemawesa.blob.core.windows.net/schemas/entities/metadata.schema.json"
+          "$ref": "https://raw.githubusercontent.com/pedro-leitao/entities/main/metadata.schema.json"
         }
 
       }
