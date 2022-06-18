@@ -2,8 +2,8 @@
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://raw.githubusercontent.com/pedro-leitao/entities/main/company.schema.json",
   "title": "Company",
-  "$ref": "#/$defs/company",
-  "$defs": {
+  "$ref": "#/definitions/company",
+  "definitions": {
     "company": {
       "type": "object",
       "title": "Company",
